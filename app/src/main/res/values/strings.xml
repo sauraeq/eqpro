@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EqulaInfotech</string>
+    <string name="title_activity_maps">EqualinfotechUser</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="gps_not_found_title">Gps Not Found</string>
+
+    <string name="gps_not_found_message">Please enable your location</string>
+
+    <string name="yes">yes</string>
+
+    <string name="no">no</string>
+    <string name="login">Login</string>
+</resources>

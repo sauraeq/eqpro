@@ -38,21 +38,23 @@ import java.util.Map;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText username,password;
+    EditText username, password;
     Button login;
     AppSharedPreference sharedpreferences;
     private Boolean GPS_PROVIDER = false;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         sharedpreferences = AppSharedPreference.getsharedprefInstance(getApplicationContext());
-        username=findViewById(R.id.username);
-        password=findViewById(R.id.password);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
 
-        login=findViewById(R.id.login);
-
+        login = findViewById(R.id.login);
 
 
         permissionManage();
@@ -60,11 +62,12 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Login(username.getText().toString(),password.getText().toString());
+                Login(username.getText().toString(), password.getText().toString());
             }
         });
 
     }
+
 
 
     private void permissionManage() {
@@ -89,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void Login(String email,String id) {
+    public void Login(String email, String id) {
         ProgressDialog pDialog = new ProgressDialog(LoginActivity.this);
         pDialog.setMessage("Loading...");
         pDialog.setCancelable(false);
@@ -97,30 +100,27 @@ public class LoginActivity extends AppCompatActivity {
         pDialog.show();
 
 
-
-        String url = URL_SUPPORT.Baseurl+"userlogin";
+        String url = URL_SUPPORT.Baseurl + "userlogin";
 
 
         final JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.accumulate("employee_id",email);
-            jsonObject.accumulate("password",id);
+            jsonObject.accumulate("employee_id", email);
+            jsonObject.accumulate("password", id);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-
-        Log.e("jsonpostdata",""+jsonObject);
+        Log.e("jsonpostdata", "" + jsonObject);
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, response -> {
 
 
-
             try {
-                JSONObject json= (JSONObject) new JSONTokener(response.toString()).nextValue();
+                JSONObject json = (JSONObject) new JSONTokener(response.toString()).nextValue();
                 JSONObject json2 = json.getJSONObject("data");
                 String user_id = (String) json2.get("user_id");
                 String email_id = (String) json2.get("email");
@@ -128,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                 sharedpreferences.setuser_id(user_id);
                 sharedpreferences.setEmailId(email_id);
                 sharedpreferences.setEmployee_code(employee_code);
-                Intent intent=new Intent(LoginActivity.this,HomeActivityStudent.class);
+                Intent intent = new Intent(LoginActivity.this, HomeActivityStudent.class);
                 startActivity(intent);
             } catch (JSONException e) {
 
@@ -148,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
             pDialog.dismiss();
 
 
-        },new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
@@ -165,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
         jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
-                1000*5,
+                1000 * 5,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 

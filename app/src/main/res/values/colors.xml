@@ -11,4 +11,12 @@
     <color name="color_red">#044E60</color>
     <color name="black">#000000</color>
     <color name="card_color_neck">#ffffff</color>
+
+    <color name="orange">#FF8C00</color>
+    <color name="blue">#00ffce</color>
+    <color name="blue1">#0009FF</color>
+    <color name="red">#FF0000</color>
+    <color name="white2">#F3F3F3</color>
+    <color name="yellow">#FFE500</color>
+    <color name="green">#51EC57</color>
 </resources>

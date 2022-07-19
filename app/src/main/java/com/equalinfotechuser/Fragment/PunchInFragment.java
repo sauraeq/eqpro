@@ -111,7 +111,7 @@ public class PunchInFragment extends Fragment {
     double lng;
     private static final int REQUEST_LOCATION = 1;
     LocationManager locationManager;
-    String latitude, longitude,status;
+    String latitude, longitude, status;
 
     SharedPreferences shared;
     SharedPreferences.Editor ed;
@@ -134,7 +134,6 @@ public class PunchInFragment extends Fragment {
 
 
     // private static final String TAG = MainActivity.class.getSimpleName();
-
 
 
     // location last updated time
@@ -162,7 +161,6 @@ public class PunchInFragment extends Fragment {
     // boolean flag to toggle the ui
     private Boolean mRequestingLocationUpdates;
     ProgressBar progressBar;
-
 
 
     public PunchInFragment() {
@@ -207,35 +205,32 @@ public class PunchInFragment extends Fragment {
 
 
         day_date = view.findViewById(R.id.day_date);
-        top=view.findViewById(R.id.top);
+        top = view.findViewById(R.id.top);
         Date today = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("HH:MM");
         time.setText(formatter.format(today));
         blink();
         // getLocation();
 
-        progressBar=view.findViewById(R.id.progress_bar);
+        progressBar = view.findViewById(R.id.progress_bar);
 
 
-        if (shared.getString("status","").equals("true"))
-        {
+        if (shared.getString("status", "").equals("true")) {
             punchin.setTextColor(Color.RED);
-        }
-        else {
+        } else {
             punchin.setTextColor(Color.BLACK);
         }
-
 
 
         punch_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (address.getText().toString().equals("")){
+                if (address.getText().toString().equals("")) {
 
-                }else {
+                } else {
                     gps = new GPSTracker(getActivity());
-                    if(gps.canGetLocation()){
+                    if (gps.canGetLocation()) {
 
                         double latitude = gps.getLatitude();
                         double longitude = gps.getLongitude();
@@ -252,8 +247,8 @@ public class PunchInFragment extends Fragment {
 
                         //   Toast.makeText(getActivity(),String.valueOf(latitude)+" "+String.valueOf(longitude),Toast.LENGTH_SHORT).show();
 
-                        lat=gps.getLatitude();
-                        lng=gps.getLongitude();
+                        lat = gps.getLatitude();
+                        lng = gps.getLongitude();
                         List<Address> addresses = null;
                         try {
                             addresses = gc.getFromLocation(latitude, longitude, 1);
@@ -284,31 +279,29 @@ public class PunchInFragment extends Fragment {
 
                             //  Toast.makeText(getActivity(),String.valueOf(distanceInMeters),Toast.LENGTH_SHORT).show();
 
-                            if (distanceInMeters<=50){
+                            if (distanceInMeters <= 50) {
 
                                 Punchin();
                                 // Toast.makeText(getActivity(),"You  are in Office range",Toast.LENGTH_SHORT).show();
 
-                            }else {
-                                Toast.makeText(getActivity(),"You  are not in Office range",Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getActivity(), "You  are not in Office range", Toast.LENGTH_SHORT).show();
                                 //  Punchin();
                             }
 
                         } catch (IOException e) {
 
-                            Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
 
                             e.printStackTrace();
                         }
 
-                    }else{
+                    } else {
                         // can't get location
                         // GPS or Network is not enabled
                         // Ask user to enable GPS/network in settings
                         gps.showSettingsAlert();
                     }
-
-
 
 
                 }
@@ -321,13 +314,13 @@ public class PunchInFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (address.getText().toString().equals("")){
+                if (address.getText().toString().equals("")) {
 
-                }else {
+                } else {
 
 
                     gps = new GPSTracker(getActivity());
-                    if(gps.canGetLocation()){
+                    if (gps.canGetLocation()) {
 
                         double latitude = gps.getLatitude();
                         double longitude = gps.getLongitude();
@@ -344,8 +337,8 @@ public class PunchInFragment extends Fragment {
 
                         //   Toast.makeText(getActivity(),String.valueOf(latitude)+" "+String.valueOf(longitude),Toast.LENGTH_SHORT).show();
 
-                        lat=gps.getLatitude();
-                        lng=gps.getLongitude();
+                        lat = gps.getLatitude();
+                        lng = gps.getLongitude();
                         List<Address> addresses = null;
                         try {
                             addresses = gc.getFromLocation(latitude, longitude, 1);
@@ -376,13 +369,13 @@ public class PunchInFragment extends Fragment {
 
                             //  Toast.makeText(getActivity(),String.valueOf(distanceInMeters),Toast.LENGTH_SHORT).show();
 
-                            if (distanceInMeters<=50){
+                            if (distanceInMeters <= 50) {
                                 Punchout();
                                 // Toast.makeText(getActivity(),"You  are in Office range",Toast.LENGTH_SHORT).show();
 
-                            }else {
+                            } else {
 
-                                Toast.makeText(getActivity(),"You  are not in Office range",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "You  are not in Office range", Toast.LENGTH_SHORT).show();
 
 
                                 // Punchout();
@@ -390,12 +383,12 @@ public class PunchInFragment extends Fragment {
 
                         } catch (IOException e) {
 
-                            Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
 
                             e.printStackTrace();
                         }
 
-                    }else{
+                    } else {
                         // can't get location
                         // GPS or Network is not enabled
                         // Ask user to enable GPS/network in settings
@@ -403,12 +396,10 @@ public class PunchInFragment extends Fragment {
                     }
 
 
-
                 }
 
             }
         });
-
 
 
         gps = new GPSTracker(getActivity());
@@ -498,17 +489,7 @@ public class PunchInFragment extends Fragment {
         }*/
 
 
-
-
-
-
-
         //  Button btn = (Button) view.findViewById(R.id.btn);
-
-
-
-
-
 
 
         init();
@@ -579,20 +560,19 @@ public class PunchInFragment extends Fragment {
         if (mCurrentLocation != null) {
 
 
-
             // Toast.makeText(getActivity(),"Lat: " + mCurrentLocation.getLatitude() + ", " + "Lng: " + mCurrentLocation.getLongitude(),Toast.LENGTH_LONG).show();
 
 
             double latitude = mCurrentLocation.getLatitude();
-            double longitude =mCurrentLocation.getLongitude();
+            double longitude = mCurrentLocation.getLongitude();
 
 
             Geocoder gc = new Geocoder(getActivity(), Locale.getDefault());
 
             //   Toast.makeText(getActivity(),String.valueOf(latitude)+" "+String.valueOf(longitude),Toast.LENGTH_SHORT).show();
 
-            lat=gps.getLatitude();
-            lng=gps.getLongitude();
+            lat = gps.getLatitude();
+            lng = gps.getLongitude();
             List<Address> addresses = null;
             try {
                 addresses = gc.getFromLocation(latitude, longitude, 1);
@@ -613,12 +593,12 @@ public class PunchInFragment extends Fragment {
                 ViewPunchin();
             } catch (IOException e) {
 
-                Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
 
                 e.printStackTrace();
             }
 
-        }else {
+        } else {
 
         }
 
@@ -785,9 +765,6 @@ public class PunchInFragment extends Fragment {
     }
 
 
-
-
-
     private boolean canMakeSmores() {
         return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
     }
@@ -848,11 +825,10 @@ public class PunchInFragment extends Fragment {
         try {
             locationTrack.stopListener();
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
-
 
 
     private void permissionManage() {
@@ -880,7 +856,6 @@ public class PunchInFragment extends Fragment {
     }
 
 
-
     private void getLocation() {
         if (ActivityCompat.checkSelfPermission(
                 getActivity(), ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
@@ -900,7 +875,7 @@ public class PunchInFragment extends Fragment {
                 // double longitude = location.getLongitude();
                 Geocoder gc = new Geocoder(getActivity(), Locale.getDefault());
 
-                Toast.makeText(getActivity(),String.valueOf(latitude)+" "+String.valueOf(longitude),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), String.valueOf(latitude) + " " + String.valueOf(longitude), Toast.LENGTH_SHORT).show();
 
                 List<Address> addresses = null;
                 try {
@@ -914,13 +889,13 @@ public class PunchInFragment extends Fragment {
                         sb.append(addres.getPostalCode()).append("\n");
                         sb.append(addres.getCountryName());
                         address.setText(addresses.get(0).getAddressLine(0));
-                        Toast.makeText(getActivity(),addresses.get(0).getAddressLine(0),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), addresses.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
 
 
                     }
                 } catch (IOException e) {
 
-                    Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
 
                     e.printStackTrace();
                 }
@@ -978,10 +953,6 @@ public class PunchInFragment extends Fragment {
 */
 
 
-
-
-
-
     private void blink() {
         final Handler hander = new Handler();
         new Thread(new Runnable() {
@@ -1013,7 +984,7 @@ public class PunchInFragment extends Fragment {
                         Date d = new Date();
                         String dayOfTheWeek = sdf.format(d);
                         day.setText(dayOfTheWeek);
-                        day_date.setText(dayOfTheWeek+", "+years);
+                        day_date.setText(dayOfTheWeek + ", " + years);
                         /*if(time.getVisibility() == View.VISIBLE) {
                             time.setVisibility(View.INVISIBLE);
                         } else {
@@ -1035,27 +1006,25 @@ public class PunchInFragment extends Fragment {
         pDialog.show();
 
 
-        String url = URL_SUPPORT.Baseurl+"markOutAttendence";
+        String url = URL_SUPPORT.Baseurl + "markOutAttendence";
 
 
         final JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.accumulate("user_id",sharedpreferences.getuser_id());
-            jsonObject.accumulate("location",address.getText().toString());
-            jsonObject.accumulate("lat",lat);
-            jsonObject.accumulate("long",lng);
+            jsonObject.accumulate("user_id", sharedpreferences.getuser_id());
+            jsonObject.accumulate("location", address.getText().toString());
+            jsonObject.accumulate("lat", lat);
+            jsonObject.accumulate("long", lng);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-
-        Log.e("jsonpostdata",""+jsonObject);
+        Log.e("jsonpostdata", "" + jsonObject);
         final RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, response -> {
-
 
 
             pDialog.dismiss();
@@ -1074,7 +1043,7 @@ public class PunchInFragment extends Fragment {
             ViewPunchin();
 
 
-        },new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 pDialog.dismiss();
@@ -1091,7 +1060,7 @@ public class PunchInFragment extends Fragment {
             }
         };
         jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
-                1000*5,
+                1000 * 5,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
@@ -1099,7 +1068,6 @@ public class PunchInFragment extends Fragment {
 
 
     }
-
 
 
     public void Punchin() {
@@ -1111,61 +1079,49 @@ public class PunchInFragment extends Fragment {
         pDialog.show();
 
 
-        String url = URL_SUPPORT.Baseurl+"markAttendence";
+        String url = URL_SUPPORT.Baseurl + "markAttendence";
 
 
         final JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.accumulate("user_id",sharedpreferences.getuser_id());
-            jsonObject.accumulate("location",address.getText().toString());
-            jsonObject.accumulate("lat",lat);
-            jsonObject.accumulate("long",lng);
+            jsonObject.accumulate("user_id", sharedpreferences.getuser_id());
+            jsonObject.accumulate("location", address.getText().toString());
+            jsonObject.accumulate("lat", lat);
+            jsonObject.accumulate("long", lng);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-
-        Log.e("jsonpostdata",""+jsonObject);
+        Log.e("jsonpostdata", "" + jsonObject);
         final RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, response -> {
 
 
-
-
-
-
-
-
-            Calendar  firstLimit= Calendar.getInstance();
-            firstLimit.set(Calendar.HOUR,9);
+            Calendar firstLimit = Calendar.getInstance();
+            firstLimit.set(Calendar.HOUR, 9);
             firstLimit.set(Calendar.MINUTE, 45);
             firstLimit.set(Calendar.SECOND, 30);
 
-            Calendar secondLimit= Calendar.getInstance();
+            Calendar secondLimit = Calendar.getInstance();
             secondLimit.set(Calendar.HOUR, 10);
             secondLimit.set(Calendar.MINUTE, 15);
             secondLimit.set(Calendar.SECOND, 30);
 
-            Calendar finalTime=Calendar.getInstance();
+            Calendar finalTime = Calendar.getInstance();
 
 
-
-            if(finalTime .after(firstLimit)&&finalTime .before(secondLimit))
-            {
+            if (finalTime.after(firstLimit) && finalTime.before(secondLimit)) {
                 punchin.setTextColor(Color.BLACK);
 
-            }
-            else
-            {
-                status="true";
+            } else {
+                status = "true";
                 punchin.setTextColor(Color.RED);
-                ed.putString("status",status);
+                ed.putString("status", status);
                 ed.commit();
             }
-
 
 
             pDialog.dismiss();
@@ -1184,7 +1140,7 @@ public class PunchInFragment extends Fragment {
             }
 
 
-        },new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 pDialog.dismiss();
@@ -1201,7 +1157,7 @@ public class PunchInFragment extends Fragment {
             }
         };
         jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
-                1000*5,
+                1000 * 5,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
@@ -1220,28 +1176,27 @@ public class PunchInFragment extends Fragment {
         pDialog.show();
 
 
-        String url = URL_SUPPORT.Baseurl+"viewAttendence";
+        String url = URL_SUPPORT.Baseurl + "viewAttendence";
 
         Date d = new Date();
-        CharSequence s  = DateFormat.format("yyyy-MM-dd", d.getTime());
+        CharSequence s = DateFormat.format("yyyy-MM-dd", d.getTime());
         final JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.accumulate("user_id",sharedpreferences.getuser_id());
-            jsonObject.accumulate("date",String.valueOf(s));
+            jsonObject.accumulate("user_id", sharedpreferences.getuser_id());
+            jsonObject.accumulate("date", String.valueOf(s));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-
-        Log.e("jsonpostdata",""+jsonObject);
+        Log.e("jsonpostdata", "" + jsonObject);
         final RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, response -> {
 
             try {
-                JSONObject json= (JSONObject) new JSONTokener(response.toString()).nextValue();
+                JSONObject json = (JSONObject) new JSONTokener(response.toString()).nextValue();
                 JSONObject json2 = json.getJSONObject("data");
                 String in_date_time = (String) json2.get("in_date_time");
                 String out_date_time = (String) json2.get("out_date_time");
@@ -1252,15 +1207,12 @@ public class PunchInFragment extends Fragment {
                 String punch_in_status = (String) json2.get("punch_in_status");
 
 
-                punchin.setText(in_date_time+" at "+in_location+" (In)");
-                punchout.setText(out_date_time+" at "+out_location+" (Out)");
+                punchin.setText(in_date_time + " at " + in_location + " (In)");
+                punchout.setText(out_date_time + " at " + out_location + " (Out)");
 
 
-
-
-                Double lat1=Double.valueOf(lat);
-                Double long1=Double.valueOf(lng);
-
+                Double lat1 = Double.valueOf(lat);
+                Double long1 = Double.valueOf(lng);
 
 
                 //  distance(lat1,long1);
@@ -1280,68 +1232,68 @@ public class PunchInFragment extends Fragment {
 
                 //  Toast.makeText(getActivity(),String.valueOf(distanceInMeters),Toast.LENGTH_SHORT).show();
 
-                String status=punch_in_status;
-                String statusout=punch_out_status;
-                if (status.equals("1")){
+                String status = punch_in_status;
+                String statusout = punch_out_status;
+                if (status.equals("1")) {
 
-                    if (distanceInMeters<=50){
-                       // punch_in.setVisibility(View.GONE);
+                    if (distanceInMeters <= 50) {
+                        // punch_in.setVisibility(View.GONE);
 
-                        if (in_date_time.equals("")){
+                        if (in_date_time.equals("")) {
                             punch_in.setVisibility(View.VISIBLE);
                             punch_out.setVisibility(View.GONE);
-                           // return;
-                        }else if (out_date_time.equals("")){
+                            // return;
+                        } else if (out_date_time.equals("")) {
                             punch_out.setVisibility(View.VISIBLE);
                             punch_in.setVisibility(View.GONE);
-                           // return;
-                        }else {
+                            // return;
+                        } else {
                             punch_in.setVisibility(View.GONE);
                             punch_out.setVisibility(View.GONE);
-                           // return;
+                            // return;
                         }
-                    }else {
+                    } else {
 
                     }
 
 
-                }else {
-                    if (distanceInMeters<=50){
+                } else {
+                    if (distanceInMeters <= 50) {
                         punch_in.setVisibility(View.VISIBLE);
 
 
-                    }else {
+                    } else {
                         punch_in.setVisibility(View.GONE);
 
                     }
                 }
 
-                if (statusout.equals("1")){
-                    if (distanceInMeters<=50){
+                if (statusout.equals("1")) {
+                    if (distanceInMeters <= 50) {
 
-                        if (in_date_time.equals("")){
+                        if (in_date_time.equals("")) {
                             punch_in.setVisibility(View.VISIBLE);
                             punch_out.setVisibility(View.GONE);
                             // return;
-                        }else if (out_date_time.equals("")){
+                        } else if (out_date_time.equals("")) {
                             punch_out.setVisibility(View.VISIBLE);
                             punch_in.setVisibility(View.GONE);
                             // return;
-                        }else {
+                        } else {
                             punch_in.setVisibility(View.GONE);
                             punch_out.setVisibility(View.GONE);
                             // return;
                         }
-                    }else {
+                    } else {
 
                     }
 
 
-                }else {
+                } else {
 
-                    if (distanceInMeters<=50){
+                    if (distanceInMeters <= 50) {
                         punch_out.setVisibility(View.VISIBLE);
-                    }else {
+                    } else {
                         punch_out.setVisibility(View.GONE);
 
                     }
@@ -1350,8 +1302,8 @@ public class PunchInFragment extends Fragment {
 
             } catch (JSONException e) {
 
-                Double lat1=Double.valueOf(lat);
-                Double long1=Double.valueOf(lng);
+                Double lat1 = Double.valueOf(lat);
+                Double long1 = Double.valueOf(lng);
                 //  distance(lat1,long1);
 
                 Location loc1 = new Location("");
@@ -1370,11 +1322,10 @@ public class PunchInFragment extends Fragment {
                 // Toast.makeText(getActivity(),String.valueOf(distanceInMeters),Toast.LENGTH_SHORT).show();
 
 
-
-                if (distanceInMeters<=50){
+                if (distanceInMeters <= 50) {
                     punch_in.setVisibility(View.VISIBLE);
                     punch_out.setVisibility(View.GONE);
-                }else {
+                } else {
                     punch_in.setVisibility(View.GONE);
                     punch_out.setVisibility(View.GONE);
 
@@ -1406,7 +1357,7 @@ public class PunchInFragment extends Fragment {
             stopLocationUpdates();
 
 
-        },new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 pDialog.dismiss();
@@ -1423,7 +1374,7 @@ public class PunchInFragment extends Fragment {
             }
         };
         jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
-                1000*5,
+                1000 * 5,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
@@ -1451,12 +1402,6 @@ public class PunchInFragment extends Fragment {
             // address.setText(addressVal);
         }
     }
-
-
-
-
-
-
 
 
     public boolean isMockLocationEnabled(Location location) {

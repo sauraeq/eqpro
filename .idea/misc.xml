@@ -3,27 +3,35 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/circle.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/ic_home_black_24dp_red.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/ic_perm_contact_calendar_black_24dp.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/ic_perm_contact_calendar_black_24dp_red.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/rounded_corner_bottom.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/rounded_corner_test.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/rounded_corner_test_login.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/rounded_corner_top.xml" value="0.173" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable-v24/rounded_edittext.xml" value="0.1375" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/drawable/circle1.xml" value="0.1375" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_home_student.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_home_student2.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_login.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_login2.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_maps.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/activity_splash.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/app_bar_main_student.xml" value="0.25" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/content_main_student.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="..\:/Users/arash/AndroidStudioProjects/EqulaInfotech/app/src/main/res/layout/fragment_punch_in.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/admin/.gradle/caches/transforms-3/18f4a69903028cb38adeebae711e43a2/transformed/mediarouter-1.0.0-alpha5/res/layout/mr_chooser_list_item.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable-v24/circle.xml" value="0.1375" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable-v24/ic_perm_contact_calendar_black_24dp.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable-v24/ic_profile.xml" value="0.1375" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable-v24/rounded_corner.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable-v24/rounded_corner_top.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable-v24/rounded_edittext2.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable/circle1.xml" value="0.1375" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable/date_bg.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable/holidaybg.xml" value="0.1375" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable/layout_back_green.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/drawable/layout_back_red.xml" value="0.109" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/Holidays.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_attendance.xml" value="0.2" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_holidays.xml" value="0.18" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_home_student.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_home_student2.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_login.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_main2.xml" value="0.16" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_maps.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/activity_monthly_reports.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/app_bar_main_student.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/calander.xml" value="0.22" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/calander1.xml" value="0.25" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/content_main_student.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/fragment_home.xml" value="0.14" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/fragment_punch_in.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/admin/Desktop/EqulaInfotech/EqulaInfotech/app/src/main/res/layout/holidays.xml" value="0.14855072463768115" />
       </map>
     </option>
   </component>

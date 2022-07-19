@@ -59,7 +59,6 @@ public class AppSharedPreference {
     }
 
 
-
     public String getBonous() {
         return appSharedPrefs.getString("Bonous", "");
     }
@@ -80,7 +79,6 @@ public class AppSharedPreference {
         prefsEditor.putString("punchstatus", path);
         prefsEditor.commit();
     }
-
 
 
     public String getAll() {
@@ -127,8 +125,6 @@ public class AppSharedPreference {
 */
 
 
-
-
     public String getEmailId() {
         return appSharedPrefs.getString("EmailId", "");
     }
@@ -150,11 +146,9 @@ public class AppSharedPreference {
     }
 
 
-
     public String getlatitude() {
         return appSharedPrefs.getString("latitude", "");
     }
-
 
 
     public void setlatitude(String flag) {
@@ -164,11 +158,9 @@ public class AppSharedPreference {
     }
 
 
-
     public String getlongitude() {
         return appSharedPrefs.getString("longitude", "");
     }
-
 
 
     public void setlongitude(String flag) {
@@ -253,7 +245,6 @@ public class AppSharedPreference {
     }
 
 
-
     public void setCategory(String path) {
         this.prefsEditor = appSharedPrefs.edit();
         prefsEditor.putString("Category", path);
@@ -265,7 +256,6 @@ public class AppSharedPreference {
     }
 
 
-
     public void setDifference(String path) {
         this.prefsEditor = appSharedPrefs.edit();
         prefsEditor.putString("Difference", path);
@@ -275,7 +265,6 @@ public class AppSharedPreference {
     public String getbmi_score() {
         return appSharedPrefs.getString("bmi_score", "");
     }
-
 
 
     public void setbmi_score(String path) {
@@ -299,7 +288,6 @@ public class AppSharedPreference {
     }
 
 
-
     public void settime(String path) {
         this.prefsEditor = appSharedPrefs.edit();
         prefsEditor.putString("time", path);
@@ -309,7 +297,6 @@ public class AppSharedPreference {
     public String getcustomer_id() {
         return appSharedPrefs.getString("customer_id", "");
     }
-
 
 
     public void setcustomer_id(String path) {
@@ -323,7 +310,6 @@ public class AppSharedPreference {
     }
 
 
-
     public void setlang(String path) {
         this.prefsEditor = appSharedPrefs.edit();
         prefsEditor.putString("lang", path);
@@ -331,12 +317,9 @@ public class AppSharedPreference {
     }
 
 
-
-
     public Boolean getlanguage() {
         return appSharedPrefs.getBoolean("language", false);
     }
-
 
 
     public void setlanguage(Boolean flag) {
@@ -350,7 +333,6 @@ public class AppSharedPreference {
     }
 
 
-
     public void setImage(String path) {
         this.prefsEditor = appSharedPrefs.edit();
         prefsEditor.putString("image", path);
@@ -360,7 +342,6 @@ public class AppSharedPreference {
     public String getheader() {
         return appSharedPrefs.getString("header", "");
     }
-
 
 
     public void setheader(String path) {
@@ -388,6 +369,7 @@ public class AppSharedPreference {
         prefsEditor.putString("name", path);
         prefsEditor.commit();
     }
+
     public String getuser_type() {
         return appSharedPrefs.getString("user_type", "");
     }
@@ -407,7 +389,6 @@ public class AppSharedPreference {
         prefsEditor.putString("Codettype", path);
         prefsEditor.commit();
     }
-
 
 
     public String getFreewrite() {
@@ -431,11 +412,18 @@ public class AppSharedPreference {
         prefsEditor.commit();
     }
 
+    public String getAllattendencebyemployee() {
+        return appSharedPrefs.getString("Allattendencebyemployee", "");
+    }
+
+    public void setAllattendencebyemployee(String path) {
+        this.prefsEditor = appSharedPrefs.edit();
+        prefsEditor.putString("Allattendencebyemployee", path);
+        prefsEditor.commit();
+    }
 
 
-
-
-    public void createLoginSession(String email, String password){
+    public void createLoginSession(String email, String password) {
         prefsEditor.putBoolean(IS_LOGIN, true);
         prefsEditor.putString(KEY_EMAIL, email);
         prefsEditor.putString(KEY_PASSWORD, password);

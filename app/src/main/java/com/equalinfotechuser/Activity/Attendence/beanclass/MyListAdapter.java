@@ -55,8 +55,30 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         final MonthlyReportBean myListData = listdata.get(position);
 
         String test = listdata.get(position).timeinterval;
+        int len=test.length();
         char first = test.charAt(1);
         Log.e("value",String.valueOf(first));
+        try {
+            int total_working_hour=Integer.parseInt(String.valueOf(first));
+            if(total_working_hour<9)
+            {
+                holder.timeintervall.setTextColor(Color.RED);
+            }
+            else
+            {
+                holder.timeintervall.setTextColor(Color.WHITE);
+            }
+        } catch (Exception e)
+        {
+
+        }
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +104,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
 
 
                 holder.date_absent.setText(datetime);
-                if (Integer.valueOf(first)<9) {
+              /*  if (Integer.valueOf(first)<9) {
 
                     holder.timeintervall.setTextColor(Color.RED);
 
@@ -90,7 +112,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                 } else {
                     // timeintervall.setTextColor(Color.BLACK);
 
-                }
+                }*/
 
             } else {
                 //   holder.layout_red.setVisibility(View.GONE);
@@ -112,7 +134,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                 holder.tvTime.setText(myListData.getIn_time());
                 holder.tvTimeOut.setText(myListData.getOut_time());
                 holder.timeintervall.setText(myListData.getTimeinterval()+" Hrs");
-                if (Integer.valueOf(first)<9) {
+             /*   if (Integer.valueOf(first)<9) {
 
                     holder.timeintervall.setTextColor(Color.RED);
 
@@ -120,7 +142,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                 } else {
                     // timeintervall.setTextColor(Color.BLACK);
 
-                }
+                }*/
 
             }
 
